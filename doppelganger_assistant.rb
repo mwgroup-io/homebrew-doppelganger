@@ -33,6 +33,7 @@ class DoppelgangerAssistant < Formula
     # Install the dmg
     resource("dmg_installer").stage do
       # Debug: List the contents of the current directory
+      system "pwd"
       system "ls", "-la"
 
       dmg_path = Dir["*.dmg"].first
