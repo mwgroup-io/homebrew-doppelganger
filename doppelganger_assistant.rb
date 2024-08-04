@@ -32,7 +32,8 @@ class DoppelgangerAssistant < Formula
 
     # Install the dmg
     resource("dmg_installer").stage do
-      system "hdiutil", "attach", "doppelganger_assistant.dmg"
+      dmg_path = Dir["*.dmg"].first
+      system "hdiutil", "attach", dmg_path
       system "cp", "-r", "/Volumes/DoppelgangerAssistant/DoppelgangerAssistant.app", "#{prefix}/DoppelgangerAssistant.app"
       system "hdiutil", "detach", "/Volumes/DoppelgangerAssistant"
     end
