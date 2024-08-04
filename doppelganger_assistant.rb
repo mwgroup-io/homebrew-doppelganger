@@ -36,7 +36,13 @@ class DoppelgangerAssistant < Formula
       system "pwd"
       system "ls", "-la"
 
-      dmg_path = Dir["*.dmg"].first
+      # Explicitly download the .dmg file
+      if Hardware::CPU.intel?
+        dmg_path = cached_download("doppelganger_assistant_darwin_amd64.dmg")
+      elsif Hardware::CPU.arm?
+        dmg_path = cached_download("doppelganger_assistant_darwin_arm64.dmg")
+      end
+
       # Debug: Print the dmg_path
       puts "DMG path: #{dmg_path}"
       odie "DMG file not found" if dmg_path.nil?
