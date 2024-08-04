@@ -11,7 +11,6 @@ class DoppelgangerAssistant < Formula
   
     license "MIT"
   
-    depends_on "libgl1"
     depends_on "xterm"
     depends_on "make"
     depends_on "git"
