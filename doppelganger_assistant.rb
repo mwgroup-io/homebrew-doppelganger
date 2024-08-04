@@ -12,6 +12,9 @@ class DoppelgangerAssistant < Formula
     license "MIT"
   
     def install
+        # Debug: List the contents of the extracted archive
+        system "tar", "-tf", cached_download
+
         if Hardware::CPU.intel?
           bin.install "fyne-cross/bin/darwin-amd64/doppelganger_assistant"
         elsif Hardware::CPU.arm?
