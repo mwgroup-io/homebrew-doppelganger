@@ -10,6 +10,7 @@ class DoppelgangerAssistant < Formula
   end
 
   license "MIT"
+  depends_on "rfidresearchgroup/proxmark3/proxmark3"
 
   def install
     # Extract the archive to the buildpath
