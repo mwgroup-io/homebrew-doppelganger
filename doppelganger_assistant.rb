@@ -32,6 +32,9 @@ class DoppelgangerAssistant < Formula
 
     # Install the dmg
     resource("dmg_installer").stage do
+      # Debug: List the contents of the current directory
+      system "ls", "-la"
+
       dmg_path = Dir["*.dmg"].first
       # Debug: Print the dmg_path
       odie "DMG file not found" if dmg_path.nil?
