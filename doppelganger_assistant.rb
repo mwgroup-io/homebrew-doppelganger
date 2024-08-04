@@ -12,20 +12,8 @@ class DoppelgangerAssistant < Formula
   license "MIT"
 
   def install
-    # Debug: List the contents of the extracted archive
-    system "tar", "-tf", cached_download
-
-    # Extract the archive to a temporary directory
+    # Extract the archive to the buildpath
     system "tar", "-xvf", cached_download, "-C", buildpath
-
-    # Debug: Print the current directory
-    system "pwd"
-
-    # Debug: List the contents of the current directory
-    system "ls", "-la"
-
-    # Debug: List the contents of the extracted directory
-    system "ls", "-la", buildpath
 
     if Hardware::CPU.intel?
       bin.install "fyne-cross/bin/darwin-amd64/doppelganger_assistant"
