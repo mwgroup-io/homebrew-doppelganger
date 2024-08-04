@@ -38,6 +38,7 @@ class DoppelgangerAssistant < Formula
 
       dmg_path = Dir["*.dmg"].first
       # Debug: Print the dmg_path
+      puts "DMG path: #{dmg_path}"
       odie "DMG file not found" if dmg_path.nil?
       system "hdiutil", "attach", dmg_path
       system "cp", "-r", "/Volumes/DoppelgangerAssistant/DoppelgangerAssistant.app", "#{prefix}/DoppelgangerAssistant.app"
