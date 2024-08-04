@@ -36,6 +36,11 @@ class DoppelgangerAssistant < Formula
       system "pwd"
       system "ls", "-la"
 
+      # Debug: List the contents of the resource directory
+      resource_dir = Dir.pwd
+      puts "Resource directory: #{resource_dir}"
+      system "ls", "-la", resource_dir
+
       dmg_path = Dir["*.dmg"].first
       # Debug: Print the dmg_path
       puts "DMG path: #{dmg_path}"
