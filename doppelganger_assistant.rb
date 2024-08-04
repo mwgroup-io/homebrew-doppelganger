@@ -1,4 +1,4 @@
-class DoppelgangerAssistantCli < Formula
+class DoppelgangerAssistant < Formula
     desc "Doppelganger Assistant CLI"
     homepage "https://github.com/tweathers-sec/doppelganger_assistant"
     if Hardware::CPU.intel?
