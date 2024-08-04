@@ -12,7 +12,7 @@ cask "doppelganger_assistant" do
     desc "Doppelganger Assistant"
     homepage "https://github.com/tweathers-sec/doppelganger_assistant"
   
-    app "DoppelgangerAssistant.app"
+    app "doppelganger_assistant.app"
   
     zap trash: [
       "~/Library/Application Support/DoppelgangerAssistant",
