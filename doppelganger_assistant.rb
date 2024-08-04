@@ -11,14 +11,14 @@ class DoppelgangerAssistant < Formula
   
     license "MIT"
   
-    depends_on "xterm"
-    depends_on "make"
-    depends_on "git"
-  
     def install
-      bin.install "doppelganger_assistant"
-      # If there are other files to install, add them here
-    end
+        if Hardware::CPU.intel?
+          bin.install "fyne-cross/bin/darwin-amd64/doppelganger_assistant"
+        elsif Hardware::CPU.arm?
+          bin.install "fyne-cross/bin/darwin-arm64/doppelganger_assistant"
+        end
+        # If there are other files to install, add them here
+      end
   
     test do
       system "#{bin}/doppelganger_assistant", "--version"
